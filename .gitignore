@@ -11,6 +11,7 @@ Thumbs.db
 
 *.pkl
 *.joblib
+!models/linear_regression_pipeline.pkl
 
 .idea/
 .vscode/

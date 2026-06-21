@@ -195,6 +195,6 @@ with tab3:
 """)
 
     metric1, metric2, metric3 = st.columns(3)
-    metric1.metric("R² Score", "0.767")
-    metric2.metric("RMSE", "5926")
-    metric3.metric("MAE", "4244")
+    metric1.metric("R² Score", "0.796")
+    metric2.metric("RMSE", "5940")
+    metric3.metric("MAE", "4069")
