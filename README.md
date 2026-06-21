@@ -1,73 +1,81 @@
 # Insurance Premium Prediction
 
 <p align="center">
-  <img src="images/app_preview.png" width="900">
+  <img src="images/app_preview.png" alt="Insurance Premium Prediction App" width="900">
 </p>
 
-An end-to-end Machine Learning project that predicts medical insurance premiums using Linear Regression. The project includes data preprocessing, exploratory data analysis (EDA), model training, evaluation, and an interactive Streamlit web application for real-time predictions.
+An end-to-end Machine Learning project that predicts medical insurance premiums using **Linear Regression**. The project covers the complete machine learning workflow, including data preprocessing, exploratory data analysis (EDA), model training, evaluation, and deployment through an interactive Streamlit web application.
+
+## Live Demo
+
+**Web Application:** https://rr-insurance-predictor.streamlit.app/
+
+---
 
 ## Highlights
 
-- End-to-end ML workflow from raw data to deployed web app
-- Exploratory Data Analysis (EDA) with visual insights
-- Feature preprocessing pipeline using `scikit-learn` `Pipeline` + `ColumnTransformer`
-- Linear Regression model trained on real-world insurance data
-- Interactive Streamlit application for real-time premium predictions
-- Model evaluation with R², RMSE, and MAE metrics
+* End-to-end machine learning workflow from raw data to deployment
+* Exploratory Data Analysis (EDA) with visual insights
+* Feature preprocessing using **scikit-learn Pipeline** and **ColumnTransformer**
+* Linear Regression model trained on real-world insurance data
+* Interactive Streamlit application for real-time insurance premium prediction
+* Model evaluation using **R2 Score**, **RMSE**, and **MAE**
 
 ## Workflow
 
 1. Load dataset
-2. Perform EDA
-3. Clean data (remove duplicates)
-4. Train-test split
+2. Perform Exploratory Data Analysis (EDA)
+3. Clean data (remove duplicate records)
+4. Perform train-test split
 5. Build preprocessing pipeline (`StandardScaler` + `OneHotEncoder`)
-6. Train Linear Regression model
+6. Train the Linear Regression model
 7. Evaluate model performance
-8. Save pipeline with joblib
-9. Deploy with Streamlit
+8. Save the trained pipeline using Joblib
+9. Deploy the application using Streamlit
 
 ## Dataset
 
-- **Source:** [Medical Insurance Cost Dataset](https://www.kaggle.com/datasets/mosapabdelghany/medical-insurance-cost-dataset) (Kaggle)
-- **Original records:** 1,338
-- **Final records after cleaning:** 1,337 (1 duplicate removed)
-- **Features:** age, sex, bmi, children, smoker, region
-- **Target:** insurance charges
+* **Source:** [Medical Insurance Cost Dataset](https://www.kaggle.com/datasets/mosapabdelghany/medical-insurance-cost-dataset) (Kaggle)
+* **Original Records:** 1,338
+* **Final Records After Cleaning:** 1,337 (1 duplicate removed)
+* **Features:** Age, Sex, BMI, Children, Smoker, Region
+* **Target:** Insurance Charges
 
 ## Model Performance
 
-| Metric | Score |
-|--------|-------|
-| R²     | 0.796 |
-| RMSE   | $5,940 |
-| MAE    | $4,069 |
+| Metric       | Score      |
+| ------------ | ---------- |
+| **R2 Score** | **0.796**  |
+| **RMSE**     | **$5,940** |
+| **MAE**      | **$4,069** |
 
 ## Tech Stack
 
-| Category       | Technologies                          |
-|----------------|---------------------------------------|
-| Language       | Python                                |
-| ML             | scikit-learn                          |
-| Data           | pandas, NumPy                         |
-| Visualization  | Matplotlib, Seaborn                   |
-| Web App        | Streamlit                             |
-| Serialization  | Joblib                                |
+| Category            | Technologies        |
+| ------------------- | ------------------- |
+| **Language**        | Python              |
+| **Machine Learning**| scikit-learn        |
+| **Data Processing** | pandas, NumPy       |
+| **Visualization**   | Matplotlib, Seaborn |
+| **Web Framework**   | Streamlit           |
+| **Model Serialization** | Joblib          |
 
 ## Project Structure
 
 ```text
-insurance-premium-prediction-Linear/
+insurance-premium-prediction/
 ├── app/
-│   └── app.py                  # Streamlit web interface
+│   └── app.py
 ├── data/
-│   ├── raw/insurance.csv       # Dataset
-│   └── processed/              # (processed data output)
-├── images/                     # (figures and previews)
+│   ├── raw/
+│   │   └── insurance.csv
+│   └── processed/
+├── images/
+│   └── app_preview.png
 ├── models/
-│   └── linear_regression_pipeline.pkl  # Trained model pipeline
+│   └── linear_regression_pipeline.pkl
 ├── notebooks/
-│   └── insurance_eda_model.ipynb       # EDA + model training
+│   └── insurance_eda_model.ipynb
 ├── requirements.txt
 ├── .gitignore
 └── README.md
@@ -77,29 +85,38 @@ insurance-premium-prediction-Linear/
 
 ```bash
 # Clone the repository
-git clone <repo-url>
-cd insurance-premium-prediction-Linear
+git clone https://github.com/Demon-diablo/insurance-premium-prediction
 
-# Create virtual environment and install dependencies
+# Navigate to the project
+cd insurance-premium-prediction
+
+# Create a virtual environment
 python3 -m venv .venv
+
+# Activate the environment
 source .venv/bin/activate
+
+# Install dependencies
 pip install -r requirements.txt
 
-# Run the Streamlit app
+# Run the Streamlit application
 streamlit run app/app.py
+```
 
-# Or re-run the notebook to retrain the model
+To retrain the model:
+
+```bash
 jupyter notebook notebooks/insurance_eda_model.ipynb
 ```
 
 ## Future Improvements
 
-- Ridge, Lasso, and ElasticNet regression for comparison
-- Model comparison dashboard
-- SHAP explainability for feature importance
-- Hyperparameter tuning with GridSearchCV
-- Deployment on cloud (Hugging Face Spaces / Streamlit Cloud)
+* Add Ridge, Lasso, and ElasticNet Regression models
+* Build a model comparison dashboard
+* Integrate SHAP for model explainability
+* Hyperparameter tuning using GridSearchCV
+* Deploy on additional cloud platforms (Hugging Face Spaces, Render)
 
 ## Acknowledgements
 
-- Dataset: [Medical Insurance Cost Dataset](https://www.kaggle.com/datasets/mosapabdelghany/medical-insurance-cost-dataset) by Mosap Abdelghany (Kaggle)
+* **Dataset:** [Medical Insurance Cost Dataset](https://www.kaggle.com/datasets/mosapabdelghany/medical-insurance-cost-dataset) by **Mosap Abdelghany** (Kaggle)
